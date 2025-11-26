@@ -1,7 +1,3 @@
-// memory_game_flutter_main.dart
-// Single-file Flutter app implementing the Memory / Concentration game features requested.
-// Replace your project's lib/main.dart with this file. Requires shared_preferences.
-
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
@@ -350,7 +346,7 @@ class _GamePageState extends State<GamePage> with SingleTickerProviderStateMixin
       context: context,
       builder: (_) => AlertDialog(
         title: Text('You Win!'),
-        content: Text('Score: \$score\nPack: \${widget.packSize}\nTime: \${timeTaken}s'),
+        content: Text('Score: $score\nPack: ${widget.packSize}\nTime: ${timeTaken}s'),
         actions: [
           TextButton(onPressed: () { Navigator.of(context).pop(); _newGame(); }, child: Text('Play Again')),
         ],
@@ -365,7 +361,7 @@ class _GamePageState extends State<GamePage> with SingleTickerProviderStateMixin
       context: context,
       builder: (_) => AlertDialog(
         title: Text('You Lose'),
-        content: Text('Reason: \$reason\nScore: \$score'),
+        content: Text('Reason: $reason\nScore: $score'),
         actions: [
           TextButton(onPressed: () { Navigator.of(context).pop(); _newGame(); }, child: Text('Try Again')),
         ],
@@ -411,11 +407,11 @@ class _GamePageState extends State<GamePage> with SingleTickerProviderStateMixin
       padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 6.0),
       child: Row(
         children: [
-          Text('Score: \$score', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          Text('Score: $score', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           SizedBox(width: 12),
-          Text('Attempts: \$attemptsRemaining', style: TextStyle(fontSize: 16)),
+          Text('Attempts: $attemptsRemaining', style: TextStyle(fontSize: 16)),
           SizedBox(width: 12),
-          if (widget.useTimer) Text('Time: \$timeLeft', style: TextStyle(fontSize: 16)),
+          if (widget.useTimer) Text('Time: $timeLeft', style: TextStyle(fontSize: 16)),
           Spacer(),
           ElevatedButton.icon(onPressed: _newGame, icon: Icon(Icons.refresh), label: Text('Restart')),
         ],

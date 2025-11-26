@@ -1,0 +1,32 @@
+name: memory_game
+description: A full-featured memory matching game with themes, packs, animations, leaderboard.
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Used for storing top scores (leaderboard)
+  shared_preferences: ^2.3.0
+
+  # Cupertino icons (optional, but Flutter adds it)
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  # (No asset packs needed — icons are built-in)
+  assets:
+    # If in future you add custom image-based cards, put them in assets/cards/
+    # - assets/cards/
+
